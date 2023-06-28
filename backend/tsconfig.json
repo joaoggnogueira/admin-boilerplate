@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "types": ["node"],
+    "paths": {
+      "@mylibs/*": ["./src/libs/*"],
+      "@mytypes/*": ["./src/types/*"],
+      "@myconfig/*": ["./config/*"]
+    },
+    "outDir": "/dist"
+  }
+}

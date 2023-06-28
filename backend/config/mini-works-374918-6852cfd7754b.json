@@ -1,0 +1,14 @@
+{
+  "web": {
+    "type": "service_account",
+    "project_id": "mini-works-374918",
+    "private_key_id": "6852cfd7754b63df001767096de3e5d567e1943c",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKbNjyW9RZjez6\nFoNTXWk8LKfFuNRcaEYAPOtA+eOWC12hZwlTnsjrmBRGkrChaFlls11KDmSAD2GO\n+8QF0Goto58TMXc2Pa3iWf3T5XvFYvxZAlCyS8T7wESBZe4uwaIdnwutgiPQVSRu\n2/7nC1wgzJ8Ya+c2hWsd7YC4XIkH1mczwnXsgNgWd2szGMiVnVgSUM80Hb3FGlwt\nk7QOuOyodliMQX9oEBsdMceMx7Kdar0G1VIGuZwBcJzKsta/0FL/JMVcXcQxoFIV\nGy8uXzwbecAu4GWi5bZf645ewotvG75Rp+EKidt3gogjwbUKE1lLJz1O6oevOdDx\n8Gv01OIHAgMBAAECggEAVxNWiX6+DF30bCoGCPTcQXHWI8QbubpzLkQGUNeNsmwm\nNTls9icON+YeBrOwPmZ0Wj67aRFi4wF6znZ3vqaGHibN1YRISzFiHMXoXd/QC7tG\nYQWRb/kO/dqZvW369Or/kS1q6RLb1BDkELoa3wlwcn2DDI7SEY534xJY9jV8Dr3E\nAz1aqoWJZsmN+OBsA++GBmPSfqmnJPbtjISuo62U4m7Ap78JW/Q/IUKB6Y7QMPBW\nMEEHd+X1xIJMHnJpO29PnmkJnVcyWak716cUWHJE5aCiNEyXY3SepOC9upRkzx+j\nXbLwu/N7WYxVIQ9PWxY6uN+bS3m+9tKG0hX7BaWwHQKBgQD2jNUfyXY4XsPpgYy8\nmFO3nDJcUCI77LG5BRD25ob26zG8h6EHsElY4lC4Te3FIwucBGg+NPjDaFzDu0cY\nDAVh0dE/HmKjnMKdcvKD8e3S1B2b7gi/1PKq7C5Afq5G/fTaqeEzYajx75QW8LYs\nIV2cUEl3/nvrAF/Y7E8s32sl1QKBgQDSLw7PGSDFxaZOLdc+2hvBeIEHzSgZmOW2\nAFSwYIszT6z7mPfecadkndE1ITt8BCrN85mLOQnV7bIn8B6HmOCDT8N7EcE/1rgI\nuOOBX6S8sODDUkin6lOgb3tMvxL18qTW4oDIz+awfEUjmKVFzsiZxLXSsHu9IxJP\nHnaGaWrKawKBgQC+ezYZleORT53a5S0fdCyR2cqKyZp5Y7g3MvPVXWt+j11gxASk\nVQ2F72vfyM1flmDczAbhsLlU92dcDW+y426xEZKxSj95Gp69WFaHnD1aumiZ1QDL\nfLFzXn+pcnYhAQnQepkzwkrtiGSIiLamR6z0HI92dpW0jRiAFqphB8fXdQKBgHRx\nha7OqQ1olt4xH1K+2ymwbSu5SUIFJx5RyJl+ox/mQFuTP5+JL8fadxEMPDxUwrIf\nBy3Oh9hxO4ZMzV0qIRgelJoWGA4aExMh+0itiELRa3RKnd4JQBNeL90w7nw71X8H\nNXoLVC7qahNyef3WteQayvDSvXrndzlGEzwcIwHJAoGAVaWs4Snj6KMm3TVXDsQA\nB7RkJO5BavPdLofmCQwR50xtNbYWJ9vS1zvzwhLOZZJrfpjFqGOfLd4xVFGRQ0fu\n2NyyFuSh17TYcZz+ixruahEvMmnNGvjj/y52t0fC4vzRBsixoDS5j0P0O7aeIT1d\nwRRJMn66qGlauTMNnPT1cIg=\n-----END PRIVATE KEY-----\n",
+    "client_email": "lms-calendar@mini-works-374918.iam.gserviceaccount.com",
+    "client_id": "114180365035308703038",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lms-calendar%40mini-works-374918.iam.gserviceaccount.com"
+  }
+}
