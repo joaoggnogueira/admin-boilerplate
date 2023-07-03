@@ -2,11 +2,14 @@
 import { PropType } from 'vue';
 
 const props = defineProps({
-    label: { type: String, required: true },
-    id: { type: String, required: true },
+    label: { type: String, required: false },
+    id: { type: String, required: false },
     icon: { type: String as PropType<'mail' | 'lock'>, required: false },
     modelValue: { type: String, required: true },
-    type: { type: String as PropType<'number' | 'date' | 'password' | 'text' | 'email' | 'name'>, required: false }
+    placeholder: { type: String, required: false },
+    copyToClipboard: { type: Boolean, required: false },
+    readonly: { type: Boolean, required: false },
+    type: { type: String as PropType<'number' | 'search' | 'date' | 'password' | 'text' | 'email' | 'name'>, required: false }
 })
 const emit = defineEmits(["update:modelValue", "fetch", "focus", "blur"])
 
@@ -17,16 +20,32 @@ const text = computed({
     },
 })
 
+async function doCopyToClipboard() {
+    if (props.copyToClipboard && text.value) {
+        try {
+            await navigator.clipboard.writeText(text.value);
+            alert('Contéudo copiado para area de transferência');
+        } catch (err) {
+            alert('Falha ao copiar: ' + err);
+        }
+    }
+}
+
 </script>
 <template>
     <div>
-        <div class="row-center mb-3 text-blue-dark-100">
-            <div class="w-6 h-6 flex-center mr-2">
+        <div v-if="label" class="row-center mb-1 text-blue-dark-100">
+            <div class="w-6 h-6 flex-center mr-2" v-if="icon">
                 <IconsMail v-if="icon == 'mail'" />
                 <IconsLock v-else-if="icon == 'lock'" />
             </div>
-            <label :for="id" class="text-base">{{ label }}</label>
+            <label :for="id" class="text-base font-bold">{{ label }}</label>
         </div>
-        <input v-model="text" :type="type" :id="id" class="bg-blue-light-100 px-6 py-3 text-base text-blue-dark-100 rounded w-full" />
+        <input @click="doCopyToClipboard" v-model="text" :readonly="readonly" :class="{
+            'opacity-75': readonly,
+            'pointer-events-none cursor-default': !copyToClipboard && readonly,
+            'cursor-pointer': copyToClipboard
+        }" :placeholder="placeholder" :type="type" :id="id"
+            class="bg-blue-light-100 px-6 py-3 text-base text-blue-dark-100 rounded w-full" />
     </div>
 </template>

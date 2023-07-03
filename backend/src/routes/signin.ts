@@ -24,7 +24,7 @@ async function handler(req: CustomExpress.Req, res: CustomExpress.Res) {
         throw new NotAcceptableError("Senha errada")
     }
 
-    const session_token = jwt.sign({ email, id: user._id, date: Date.now() }, process.env.JWT_SECRET_TOKEN + 'admintemplatesha2023', {
+    const session_token = jwt.sign({ email, id: user._id, super: user.super, date: Date.now() }, process.env.JWT_SECRET_TOKEN + 'admintemplatesha2023', {
         expiresIn: process.env.JWT_EXPIRATION_TIME,
     })
 

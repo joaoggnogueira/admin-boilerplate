@@ -31,8 +31,20 @@ function logout() {
         <div class="flex-grow flex items-stretch">
             <nav class="w-80 bg-blue-light-100 p-16">
                 <ul class="flex flex-col gap-y-8">
+                    <li>
+                        <a href="/dashboard" class="flex items-center text-lg text-blue-dark-50 hover:underline">
+                            <IconsHome class="mr-2" /> Início
+                        </a>
+                    </li>
                     <li><label class="text-blue">Conteúdo</label></li>
                     <li><label class="text-blue">Administração</label></li>
+                    <li>
+                        <a href="/dashboard/admins" class="flex items-center text-lg text-blue-dark-50 hover:underline">
+                            <IconsUsers class="mr-2" />
+                            Administradores
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
             <NuxtPage />

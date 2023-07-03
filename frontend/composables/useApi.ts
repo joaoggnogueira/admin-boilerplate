@@ -56,7 +56,7 @@ export function useApi() {
         let data = null
         let error = null
         try {
-            const apiresponse = await $axios.post(path, body)
+            const apiresponse = await $axios.post(path, body, { headers: { authorization: useSession().token() } })
             data = apiresponse.data;
         } catch (e: any) {
             treatError(e)
@@ -73,7 +73,7 @@ export function useApi() {
         let data = null;
         let error = null
         try {
-            const apiresponse = await $axios.get(path)
+            const apiresponse = await $axios.get(path, { headers: { authorization: useSession().token() } })
             data = apiresponse.data;
         } catch (e: any) {
             treatError(e)
