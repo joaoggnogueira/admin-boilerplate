@@ -10,7 +10,7 @@ function logout() {
 </script>
 <template>
     <div class="h-screen w-full flex flex-col items-stretch">
-        <header class="h-20 flex items-stretch bg-blue-darker-100 py-4 pr-7">
+        <header class="h-20 flex items-stretch bg-blue-darker-100 py-4 pr-7" data-aos="fade-down">
             <div class="w-80 flex justify-center items-center text-white text-3xl">
                 Admin<span class="text-blue">Template</span>
             </div>
@@ -21,7 +21,8 @@ function logout() {
                 Usuário
                 <IconsChevron class="w-4 h-4" />
             </button>
-            <div v-if="showUserNav" class="w-60 flex flex-col bg-blue-darker-100 right-4 top-24 absolute py-3 rounded-md">
+            <div v-if="showUserNav" data-aos="fade-down"
+                class="w-60 flex flex-col bg-blue-darker-100 right-4 top-24 absolute py-3 rounded-md z-50">
                 <button class="w-full h-12 px-6 py-3 hover:bg-blue-dark-200 text-gray-bright flex items-center"
                     @click="logout">
                     <IconsLogout class="h-6 w-6 mr-2" /> SAIR
@@ -29,7 +30,7 @@ function logout() {
             </div>
         </header>
         <div class="flex-grow flex items-stretch">
-            <nav class="w-full max-w-[20rem] bg-blue-light-100 p-16">
+            <nav class="w-full max-w-[20rem] bg-blue-light-100 p-16" data-aos="fade-right">
                 <ul class="flex flex-col gap-y-4">
                     <li>
                         <NuxtLink href="/dashboard" class="flex items-center text-lg text-blue-dark-50 hover:underline">
@@ -54,7 +55,7 @@ function logout() {
                     </li>
                 </ul>
             </nav>
-            <NuxtPage />
+            <NuxtPage data-aos="fade-down" />
         </div>
     </div>
 </template>

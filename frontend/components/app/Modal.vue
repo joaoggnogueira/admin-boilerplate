@@ -11,9 +11,9 @@ function close() {
 
 </script>
 <template>
-    <div class="w-full h-full top-0 left-0 fixed bg-blue-dark-50 bg-opacity-25 backdrop-blur-sm flex items-center justify-center"
+    <div class="w-full h-full top-0 left-0 fixed bg-blue-dark-50 bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-50"
         v-if="opened" @click="close">
-        <div class="w-[40rem] px-10 py-10 bg-white rounded-md" @click.stop>
+        <div class="w-[40rem] px-10 py-10 bg-white rounded-md"  data-aos="fade-down" @click.stop>
             <slot />
         </div>
     </div>

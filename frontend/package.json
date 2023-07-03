@@ -12,12 +12,15 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.6.6",
+    "@types/aos": "^3.0.4",
     "@types/node": "^18",
     "nuxt": "^3.4.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^2.9.1",
+    "aos": "^2.3.4",
     "axios": "^1.4.0"
   }
 }

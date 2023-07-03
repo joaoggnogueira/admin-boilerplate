@@ -26,27 +26,28 @@ export function useApi() {
     function treatError(e: AxiosError) {
         if (e.response) {
             if (e.response.status == 401) {
-                alert("Sessão não encontrada");
+                useToast().error("Sessão não encontrada");
                 useSession().clear_session()
                 navigateTo("/login")
                 return
             } else if (e.response.status == 404 && !e.response.data) {
-                alert("Endpoint não encontrada");
+                useToast().error("Endpoint não encontrada");
                 return
             }
             if (e.response.data) {
                 const errors = (e.response.data as any).errors
                 if (Array.isArray(errors)) {
-                    alert(errors.map(d => d.msg).join(" | ") || "");
+                    useToast().error(errors.map(d => d.msg).join(" | ") || "");
                 } else {
                     const data: any = e.response.data;
-                    alert((data.message || data || ""));
+                    useToast().error((data.message || data || ""));
                 }
             } else {
-                alert("Erro " + (e.response.status || "") + ": " + e.response.statusText);
+                
+                useToast().error("Erro " + (e.response.status || "") + ": " + e.response.statusText);
             }
         } else {
-            alert("Erro " + e.status + ": " + e.message);
+            useToast().error("Erro " + e.status + ": " + e.message);
         }
 
     }

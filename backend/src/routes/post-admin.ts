@@ -15,8 +15,12 @@ async function handler(req: CustomExpress.Req, res: CustomExpress.Res) {
     const Admins = mongoose.model<App.Admin>("admins")
     let admin = null;
 
+    if (form.password) {
+        form.password = SHA256(form.password).toString("hex")
+    }
+
     if (form._id) {
-        admin = await Admins.updateOne({ _id: new ObjectId(form._id) }, { $set: { deleted: form.deleted, password: SHA256(form.password).toString("hex") } }, { new: true })
+        admin = await Admins.updateOne({ _id: new ObjectId(form._id) }, { $set: { deleted: form.deleted, password: form.password } }, { new: true })
     } else {
         if (!form.email || form.email.indexOf("@") != -1) {
             throw new BadRequestError("Campo de email inválido")
@@ -27,7 +31,7 @@ async function handler(req: CustomExpress.Req, res: CustomExpress.Res) {
         if (!form.password || form.password.length < 10) {
             throw new BadRequestError("Campo de senha não pode ter menos de 10 letras")
         }
-        admin = await Admins.create({ created: new Date(), deleted: false, email: form.email, name: form.name, password: SHA256(form.password).toString("hex"), super: form.super })
+        admin = await Admins.create({ created: new Date(), deleted: false, email: form.email, name: form.name, password: form.password, super: form.super })
     }
 
     res.status(200).json({ success: true })

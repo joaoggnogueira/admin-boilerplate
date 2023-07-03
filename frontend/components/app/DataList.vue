@@ -54,7 +54,7 @@ retrieve()
 <template>
     <div>
         <AppModal :opened="!!form" @close="closeForm">
-            <slot name="form" :form="(form as any)" />
+            <slot name="form" :form="(form as any)" :closeForm="closeForm" />
         </AppModal>
         <div class="w-full flex items-start mb-2">
             <p class="text-xl font-bold">{{ title }}</p>

@@ -6,12 +6,12 @@ async function fetchAdmins(from: number, to: number, search: string) {
     return admins
 }
 
-async function submit(form: App.Admin) {
+async function submit(form: App.Admin, next: Function) {
     try {
         const res = await useApi().post("/admin", form)
         if (res && res.success) {
-            alert("Sucesso")
-            location.reload()
+            useToast().success("Sucesso", form._id ? "Administrador atualizado" : "Administrador cadastrado")
+            next()
         }
     } catch (e) {
         alert(e)
@@ -67,7 +67,7 @@ const templateForm = {
                 <div class="w-full h-14 rounded-md">
                 </div>
             </template>
-            <template #form=" { form }: { form: App.Admin } ">
+            <template #form=" { form, closeForm }: { form: App.Admin, closeForm: Function } ">
                 <div class="w-full flex flex-col gap-y-4" v-if=" form ">
                     <AppTextField :readonly=" !!form._id " placeholder="Digite aqui o email de acesso do administrador"
                         label="email" v-model=" form.email "></AppTextField>
@@ -82,7 +82,8 @@ const templateForm = {
                     <AppSwitch :readonly=" !!form._id " v-model=" form.super "
                         label="Pode cadastrar novos administradores?" />
                     <AppSwitch v-model=" form.deleted " label="Arquivado" v-if=" !!form._id " />
-                    <AppButton class="flex-grow self-start" @click="submit(form)">{{ form._id?"ATUALIZAR":"CADASTRAR" }}
+                    <AppButton class="flex-grow self-start" @click="submit(form,closeForm)">{{
+                        form._id?"ATUALIZAR":"CADASTRAR" }}
                     </AppButton>
                 </div>
             </template>

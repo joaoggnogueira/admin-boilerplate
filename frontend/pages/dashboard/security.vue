@@ -6,14 +6,20 @@ const repeatPassword = ref("")
 
 async function atualizarSenha() {
     if (!currentPassword.value) {
-        return alert("Insira a senha atual")
+        return useToast().error("Insira a senha atual")
+    }
+    if (!newPassword.value) {
+        return useToast().error("Insira a nova senha")
+    }
+    if (!repeatPassword.value) {
+        return useToast().error("Repita a senha")
     }
     if (newPassword.value != repeatPassword.value) {
-        return alert("Senhas são diferentes")
+        return useToast().error("Senhas são diferentes")
     }
     const res = await useApi().post("/new-password", { currentPassword: currentPassword.value, newPassword: newPassword.value })
     if (res) {
-        alert("Sucesso")
+        useToast().success("Sucesso", "Senha atualizada")
     }
 }
 
