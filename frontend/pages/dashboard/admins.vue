@@ -44,7 +44,7 @@ const templateForm = {
 </script>
 <template>
     <div class="px-8 py-12 w-full">
-        <AppDataList class="mt-4 w-full" :templateForm="templateForm" :fetch-fn="fetchAdmins" title="Administradores">
+        <AppDataList class="w-full" :templateForm="templateForm" :fetch-fn="fetchAdmins" title="Administradores">
             <template #default="{ item, editForm }: { item: App.Admin, editForm: Function }">
                 <div class="bg-blue-light-100 w-full flex items-center h-14 rounded-md overflow-hidden">
                     <div class="aspect-square h-full bg-blue-dark-50 p-4 text-white mr-4">

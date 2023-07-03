@@ -29,7 +29,7 @@ function logout() {
             </div>
         </header>
         <div class="flex-grow flex items-stretch">
-            <nav class="w-80 bg-blue-light-100 p-16">
+            <nav class="w-full max-w-[20rem] bg-blue-light-100 p-16">
                 <ul class="flex flex-col gap-y-4">
                     <li>
                         <NuxtLink href="/dashboard" class="flex items-center text-lg text-blue-dark-50 hover:underline">
@@ -39,13 +39,15 @@ function logout() {
                     <li><label class="text-blue my-2">Conteúdo</label></li>
                     <li><label class="text-blue my-2">Administração</label></li>
                     <li>
-                        <NuxtLink href="/dashboard/admins" class="flex items-center text-lg text-blue-dark-50 hover:underline">
+                        <NuxtLink href="/dashboard/admins"
+                            class="flex items-center text-lg text-blue-dark-50 hover:underline">
                             <IconsUsers class="mr-2" />
                             Administradores
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink href="/dashboard/security" class="flex items-center text-lg text-blue-dark-50 hover:underline">
+                        <NuxtLink href="/dashboard/security"
+                            class="flex items-center text-lg text-blue-dark-50 hover:underline">
                             <IconsCog class="mr-2" />
                             Segurança
                         </NuxtLink>

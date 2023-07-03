@@ -56,7 +56,7 @@ retrieve()
         <AppModal :opened="!!form" @close="closeForm">
             <slot name="form" :form="(form as any)" />
         </AppModal>
-        <div class="w-full flex items-center h-20 mb-2">
+        <div class="w-full flex items-start mb-2">
             <p class="text-xl font-bold">{{ title }}</p>
             <div class="flex-grow"></div>
             <AppButton @click="newForm" class="mr-2">NOVO</AppButton>

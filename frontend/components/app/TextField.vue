@@ -34,7 +34,7 @@ async function doCopyToClipboard() {
 </script>
 <template>
     <div>
-        <div v-if="label" class="row-center mb-1 text-blue-dark-100">
+        <div v-if="label" class="flex items-end mb-1 text-blue-dark-100">
             <div class="w-6 h-6 flex-center mr-2" v-if="icon">
                 <IconsMail v-if="icon == 'mail'" />
                 <IconsLock v-else-if="icon == 'lock'" />
