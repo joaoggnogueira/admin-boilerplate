@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { App } from 'types/app';
 import { CustomExpress } from 'types/custom_express';
+const ObjectId = mongoose.Types.ObjectId
 
 async function handler(req: CustomExpress.Req, res: CustomExpress.Res) {
     let { from, to, search } = req.query as any as { from: number, to: number, search: string }
@@ -9,7 +10,7 @@ async function handler(req: CustomExpress.Req, res: CustomExpress.Res) {
     if (search) {
         search = search.replace(/(\.|\-|\_|\?|\*|\)|\(|\[|\]|\^|\$|\@|\!|\||\\|\/)/g, "").trim()
     }
-    let admins: App.Admin = await Admins.find({ ...(search ? { $or: [{ email: { $regex: search, $options: 'i' } }, { name: { $regex: search, $options: 'i' } }] } : {}) }, "-password").skip(from).limit(to - from).lean()
+    let admins: App.Admin = await Admins.find({ _id: { $ne: new ObjectId(req.user.id) }, ...(search ? { $or: [{ email: { $regex: search, $options: 'i' } }, { name: { $regex: search, $options: 'i' } }] } : {}) }, "-password").skip(from).limit(to - from).lean()
 
     res.status(200).json(admins)
 }

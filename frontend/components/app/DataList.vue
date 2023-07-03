@@ -86,6 +86,10 @@ retrieve()
             <AppTriggerVisibility @triggered="retrieve" v-else-if="!ends">
                 <li>show more</li>
             </AppTriggerVisibility>
+            <div class="flex flex-col items-center font-bold mt-20" v-else-if="!list.length">
+                <img src="/empty.jpg" class="w-1/3" />
+                <p>Nenhum resultado encontrado</p>
+            </div>
         </ul>
     </div>
 </template>
